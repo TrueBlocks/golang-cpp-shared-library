@@ -1,0 +1,1 @@
+# golang-cpp-shared-library
