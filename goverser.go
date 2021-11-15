@@ -1,14 +1,11 @@
 package main
 
+// #include "./bbb.h"
 import "C"
 import (
 	"fmt"
 	"sync/atomic"
 )
-
-// import (
-//     "fmt"
-// )
 
 var totalSpent int64
 var totalSpentError int64
@@ -19,7 +16,11 @@ func Filter() bool {
 }
 
 //export Header
-func Header() bool {
+func Header(t *C.MyNewClass) bool {
+    fmt.Println(t)
+    fmt.Println(t.c)
+    t.c.kk = 10;
+    fmt.Println(t)
 	fmt.Println("some header functionality >>> ")
 	return false
 }

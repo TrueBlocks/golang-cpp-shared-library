@@ -6,10 +6,18 @@
 #include <cstdlib>
 #include "goverser.h"
 
+
 using namespace std;
 
 bool preFunc() {
-    return Header();
+    MyCClass cclass = * new MyCClass;
+    MyNewClass myclass = * new MyNewClass;
+    myclass.bar = 11;
+    myclass.foo = 14;
+    myclass.c = cclass;
+    Header(&myclass);
+    cout << myclass.c.kk;
+    return true;
 }
 
 bool postFunc(){
@@ -27,9 +35,7 @@ bool filter() {
 
 int main() {
     preFunc();
-    for(int i =0; i<10; i++){
-        displayFunc(rand()%100 + 1, rand()%2 == 0);
-    }
+    displayFunc(10, false);
     postFunc();
 
     return 0;

@@ -1,7 +1,7 @@
 
 
 go-build:
-	go build -o goverser.dylib -buildmode=c-shared ./goverser/goverser.go
+	go build -o goverser.dylib -buildmode=c-shared ./goverser.go
 
 
 build: go-build
