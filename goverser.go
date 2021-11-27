@@ -15,12 +15,16 @@ func Filter() bool {
 	return true
 }
 
+func (t *C.MyNewClass) String() string {
+	return fmt.Sprintf("bar: %d foo: %d { kk: %d gg: %d ff: %d}", t.bar, t.foo, t.c.kk, t.c.gg, t.c.ff)
+}
+
 //export Header
 func Header(t *C.MyNewClass) bool {
-    fmt.Println(t)
-    fmt.Println(t.c)
-    t.c.kk = 10;
-    fmt.Println(t)
+	fmt.Println(t)
+	fmt.Println(t.c)
+	t.c.kk = 10
+	fmt.Println(t)
 	fmt.Println("some header functionality >>> ")
 	return false
 }
